@@ -49,8 +49,8 @@ If you want to learn more about building native executables, please consult http
 
 ## Related Guides
 
+- MongoDB with Panache ([guide](https://quarkus.io/guides/mongodb-panache)): Simplify your persistence code for MongoDB via the active record or the repository pattern
 - Redis Client ([guide](https://quarkus.io/guides/redis)): Connect to Redis in either imperative or reactive style
-- JDBC Driver - PostgreSQL ([guide](https://quarkus.io/guides/datasource)): Connect to the PostgreSQL database via JDBC
 
 ## Provided Code
 

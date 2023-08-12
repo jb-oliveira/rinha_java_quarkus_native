@@ -1,0 +1,24 @@
+# Use an official MongoDB image as the base image
+FROM mongo:4.4
+
+# Expose the default MongoDB port
+EXPOSE 27017
+
+# Set environment variables for MongoDB
+ENV MONGO_INITDB_ROOT_USERNAME=admin
+ENV MONGO_INITDB_ROOT_PASSWORD=adminpassword
+ENV MONGO_INITDB_DATABASE=rinha
+
+# Copy your custom MongoDB configuration file (if needed)
+# COPY mongod.conf /etc/mongod.conf
+
+# You can also copy any initialization scripts into the container
+# COPY init.js /docker-entrypoint-initdb.d/
+
+# Start MongoDB when the container starts
+CMD ["mongod"]
+
+
+# run command
+# docker run -d -p 27017:27017 --name mongodb-container my-mongodb-image
+# docker run -p 27017:27017 --name rinha-mongo-dbcontainer rinha-mongo-db-image
