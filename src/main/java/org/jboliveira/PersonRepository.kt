@@ -6,5 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped
 @ApplicationScoped
 class PersonRepository: PanacheMongoRepository<PersonEntity> {
 
-
+    fun findByApelido(apelido: String?): PersonEntity? {
+        return find("apelido", apelido).firstResult()
+    }
 }
