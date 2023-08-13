@@ -6,3 +6,6 @@ quarkus:
     connection-string: mongodb://localhost:27017/rinha
     # Disable MongoDB authentication if needed
     # credentials-disabled: true
+
+  validation:
+    fail-fast: true
