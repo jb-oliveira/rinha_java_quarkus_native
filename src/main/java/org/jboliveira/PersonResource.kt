@@ -9,6 +9,7 @@ import jakarta.ws.rs.core.Response
 import org.bson.types.ObjectId
 import java.net.URI
 
+
 @Path("/pessoas")
 class PersonResource {
 
@@ -18,11 +19,11 @@ class PersonResource {
     @Inject
     lateinit var validator: Validator
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    fun list(): List<PersonDTO> {
-        return repository.listAll().map { p -> PersonDTO(p) }
-    }
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON)
+//    fun list(): List<PersonDTO> {
+//        return repository.listAll().map { p -> PersonDTO(p) }
+//    }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -51,6 +52,12 @@ class PersonResource {
             throw WebApplicationException(404);
         }
         return Response.ok(PersonDTO(result)).build()
+    }
+
+    @GET
+    @Produces("application/json")
+    fun list(@QueryParam("t") query: String): List<PersonDTO> {
+        return repository.search(query).map { p -> PersonDTO(p) }
     }
 
 }
