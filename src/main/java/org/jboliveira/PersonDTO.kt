@@ -7,6 +7,7 @@ import kotlinx.serialization.Serializable
 import org.bson.types.ObjectId
 import java.time.LocalDate
 
+@Serializable
 class PersonDTO {
     constructor(entity: PersonEntity) {
         this.id = entity.id
